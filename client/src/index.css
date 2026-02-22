@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Brazilian Core with Winter Twist */
+  --brazil-green: 146 64% 36%;
+  --brazil-yellow: 48 100% 50%;
+  --brazil-blue: 228 63% 36%;
+  
+  /* Theme Colors */
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
+  
+  --primary: 146 64% 36%; /* Brazil Green */
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 48 100% 50%; /* Brazil Yellow */
+  --secondary-foreground: 222 47% 11%;
+  
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  
+  --accent: 228 63% 36%; /* Brazil Blue */
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 146 64% 36%;
+  
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  
+  --card: 222 47% 14%;
+  --card-foreground: 210 40% 98%;
+
+  --popover: 222 47% 14%;
+  --popover-foreground: 210 40% 98%;
+  
+  --primary: 146 64% 45%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 48 100% 50%;
+  --secondary-foreground: 222 47% 11%;
+  
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  
+  --accent: 228 63% 45%;
+  --accent-foreground: 0 0% 100%;
+  
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 146 64% 45%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-yellow-300 selection:text-blue-900;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Archivo', sans-serif;
+    @apply tracking-tight font-bold;
+  }
+}
+
+/* Custom Gradients */
+.bg-gradient-brazil {
+  background: linear-gradient(135deg, hsl(var(--brazil-blue)) 0%, hsl(var(--brazil-green)) 100%);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(to right, #F7C536, #FCD979, #F7C536);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass Effect */
+.glass-card {
+  @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
