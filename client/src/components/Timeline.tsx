@@ -60,7 +60,7 @@ export function Timeline({ events }: TimelineProps) {
                     <p className="text-xs text-muted-foreground">{formattedYear}</p>
                   )}
                 </div>
-                <div className="flex-1 h-px bg-border ml-2" />
+                <div className="flex-1 h-px bg-slate-200 dark:bg-border ml-2" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pl-0 md:pl-[52px]">
@@ -76,11 +76,11 @@ export function Timeline({ events }: TimelineProps) {
                       transition={{ delay: eventIndex * 0.08 }}
                     >
                       <Card
-                        className={`p-0 overflow-hidden h-full ${
+                        className={`p-0 overflow-hidden h-full border ${
                           isGold
-                            ? "border-yellow-400 ring-1 ring-yellow-300/50"
-                            : ""
-                        }`}
+                            ? "border-yellow-400 ring-1 ring-yellow-300/50 shadow-md shadow-yellow-100 dark:shadow-none"
+                            : "border-slate-200 dark:border-border shadow-sm hover:shadow-md dark:shadow-none"
+                        } transition-shadow`}
                         data-testid={`timeline-event-${event.id}`}
                       >
                         {isGold && (
@@ -139,7 +139,7 @@ export function Timeline({ events }: TimelineProps) {
                             </Badge>
                           </div>
 
-                          <div className="border-t border-border pt-3 space-y-2">
+                          <div className="border-t border-slate-100 dark:border-border pt-3 space-y-2">
                             {event._groupedAthletes &&
                             event._groupedAthletes.length > 1 ? (
                               event._groupedAthletes.map((ath, i) => {
@@ -162,7 +162,7 @@ export function Timeline({ events }: TimelineProps) {
                                     className="flex items-center gap-3 group"
                                   >
                                     {ath.imageUrl ? (
-                                      <div className="w-8 h-8 rounded-full overflow-hidden shrink-0 ring-2 ring-border">
+                                      <div className="w-8 h-8 rounded-full overflow-hidden shrink-0 ring-2 ring-slate-200 dark:ring-border">
                                         <img
                                           src={ath.imageUrl}
                                           alt={ath.name}
@@ -193,7 +193,7 @@ export function Timeline({ events }: TimelineProps) {
                                 className="flex items-center gap-3 group"
                               >
                                 {event.athlete?.imageUrl ? (
-                                  <div className="w-8 h-8 rounded-full overflow-hidden ring-2 ring-border shrink-0">
+                                  <div className="w-8 h-8 rounded-full overflow-hidden ring-2 ring-slate-200 dark:ring-border shrink-0">
                                     <img
                                       src={event.athlete.imageUrl}
                                       alt={event.athlete.name}
@@ -228,7 +228,7 @@ export function Timeline({ events }: TimelineProps) {
                                 );
                               if (hasIndividualResults) return null;
                               return (
-                                <div className="mt-3 pt-3 border-t border-dashed border-border">
+                                <div className="mt-3 pt-3 border-t border-dashed border-slate-100 dark:border-border">
                                   <div className="flex items-start justify-between gap-2">
                                     <span className="text-xs uppercase font-semibold text-muted-foreground shrink-0 pt-0.5">
                                       Resultado

@@ -59,18 +59,18 @@ export default function AthletePage() {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
-      <div className="relative overflow-hidden bg-[#0A1A2F] text-white">
+      <div className="relative overflow-hidden bg-gradient-to-br from-green-700 via-emerald-800 to-blue-900 dark:from-[#0A1A2F] dark:via-[#0f2440] dark:to-[#0A1A2F] text-white">
         <div className="absolute inset-0 z-0">
           {athlete.imageUrl ? (
             <img
               src={athlete.imageUrl}
               alt={athlete.name}
-              className="w-full h-full object-cover opacity-20 blur-sm scale-110"
+              className="w-full h-full object-cover opacity-15 dark:opacity-20 blur-sm scale-110"
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-green-900 to-blue-900" />
           )}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1A2F]/50 via-[#0A1A2F]/70 to-[#0A1A2F]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-green-800/40 via-emerald-900/60 to-blue-900/80 dark:from-[#0A1A2F]/50 dark:via-[#0A1A2F]/70 dark:to-[#0A1A2F]" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10 pt-20 pb-16">
@@ -94,7 +94,7 @@ export default function AthletePage() {
             >
               <div
                 className={`rounded-2xl overflow-hidden border-4 shadow-2xl w-[200px] h-[250px] md:w-[240px] md:h-[300px] lg:w-[260px] lg:h-[320px] ${
-                  hasGold ? "border-yellow-400" : "border-white/20"
+                  hasGold ? "border-yellow-400" : "border-white/30"
                 }`}
               >
                 {athlete.imageUrl ? (
@@ -139,13 +139,13 @@ export default function AthletePage() {
               </div>
 
               <h1
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight drop-shadow-md"
                 data-testid="text-athlete-name"
               >
                 {athlete.name}
               </h1>
 
-              <div className="flex flex-wrap gap-4 text-sm text-gray-300 justify-center md:justify-start">
+              <div className="flex flex-wrap gap-4 text-sm text-white/70 justify-center md:justify-start">
                 {athlete.confederation && (
                   <a
                     href={athlete.confederation.includes("CBDN") ? "https://www.instagram.com/brasilnaneve/" : "https://www.instagram.com/icebrasil/"}
@@ -166,7 +166,7 @@ export default function AthletePage() {
                     href={`https://instagram.com/${athlete.instagram.replace("@", "")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur rounded-md border border-white/10 text-sm font-medium transition-all hover:bg-white/20"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-white/15 backdrop-blur-sm rounded-md border border-white/20 text-sm font-medium transition-all hover:bg-white/25"
                     data-testid="link-athlete-instagram"
                   >
                     <Instagram className="w-4 h-4" />
@@ -188,7 +188,7 @@ export default function AthletePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <Card className="p-6" data-testid="card-athlete-bio">
+              <Card className="p-6 border-slate-200 dark:border-border shadow-sm" data-testid="card-athlete-bio">
                 <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
                   <User className="w-5 h-5 text-primary" />
                   Sobre
@@ -205,7 +205,7 @@ export default function AthletePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                <Card className="p-6" data-testid="card-completed-events">
+                <Card className="p-6 border-slate-200 dark:border-border shadow-sm" data-testid="card-completed-events">
                   <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
                     <Trophy className="w-5 h-5 text-primary" />
                     Resultados
@@ -220,12 +220,12 @@ export default function AthletePage() {
                           key={event.id}
                           className={`rounded-md border overflow-hidden ${
                             isGold
-                              ? "border-yellow-300 bg-yellow-50/50 dark:bg-yellow-900/10 dark:border-yellow-700"
+                              ? "border-yellow-300 bg-yellow-50/80 dark:bg-yellow-900/10 dark:border-yellow-700 shadow-sm shadow-yellow-100 dark:shadow-none"
                               : isSilver
-                              ? "border-slate-300 bg-slate-50/50 dark:bg-slate-800/30 dark:border-slate-600"
+                              ? "border-slate-300 bg-slate-50/80 dark:bg-slate-800/30 dark:border-slate-600"
                               : isBronze
-                              ? "border-orange-300 bg-orange-50/50 dark:bg-orange-900/10 dark:border-orange-700"
-                              : "border-border"
+                              ? "border-orange-300 bg-orange-50/80 dark:bg-orange-900/10 dark:border-orange-700"
+                              : "border-slate-200 dark:border-border"
                           }`}
                           data-testid={`result-event-${event.id}`}
                         >
@@ -279,7 +279,7 @@ export default function AthletePage() {
                               </Badge>
                             ) : null}
                           </div>
-                          <div className="mt-2 pt-2 border-t border-dashed border-border">
+                          <div className="mt-2 pt-2 border-t border-dashed border-slate-200 dark:border-border">
                             <p className={`text-sm font-medium break-words ${isGold ? "text-yellow-700 dark:text-yellow-300" : ""}`}>
                               {event.result}
                             </p>
@@ -300,23 +300,23 @@ export default function AthletePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35 }}
             >
-              <Card className="p-6" data-testid="card-athlete-stats">
+              <Card className="p-6 border-slate-200 dark:border-border shadow-sm" data-testid="card-athlete-stats">
                 <h2 className="text-lg font-bold mb-4">Resumo</h2>
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center py-2 border-b border-border">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-100 dark:border-border">
                     <span className="text-sm text-muted-foreground">Modalidade</span>
                     <span className="font-semibold text-sm">{athlete.sport}</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-border">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-100 dark:border-border">
                     <span className="text-sm text-muted-foreground">Total de Provas</span>
                     <span className="font-semibold text-sm">{athlete.events.length}</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-border">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-100 dark:border-border">
                     <span className="text-sm text-muted-foreground">Provas Concluidas</span>
                     <span className="font-semibold text-sm">{completedEvents.length}</span>
                   </div>
                   {hasMedal && (
-                    <div className="flex justify-between items-center py-2 border-b border-border">
+                    <div className="flex justify-between items-center py-2 border-b border-slate-100 dark:border-border">
                       <span className="text-sm text-muted-foreground">Medalhas</span>
                       <div className="flex gap-1">
                         {athlete.events
@@ -356,7 +356,7 @@ export default function AthletePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45 }}
               >
-                <Card className="p-6" data-testid="card-upcoming-events">
+                <Card className="p-6 border-slate-200 dark:border-border shadow-sm" data-testid="card-upcoming-events">
                   <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
                     <Calendar className="w-4 h-4 text-primary" />
                     Proximas Provas
@@ -365,7 +365,7 @@ export default function AthletePage() {
                     {upcomingEvents.map((event) => (
                       <div
                         key={event.id}
-                        className="p-3 rounded-md border border-dashed border-border"
+                        className="p-3 rounded-md border border-dashed border-slate-200 dark:border-border"
                         data-testid={`upcoming-event-${event.id}`}
                       >
                         <p className="font-semibold text-sm">{event.eventName}</p>
@@ -399,12 +399,12 @@ export default function AthletePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <Card className="p-6 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/10 dark:to-blue-900/10 border-green-200 dark:border-green-800">
+              <Card className="p-6 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/10 dark:to-blue-900/10 border-green-200 dark:border-green-800 shadow-sm">
                 <div className="flex items-center gap-3 mb-3">
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/80px-Flag_of_Brazil.svg.png"
                     alt="Bandeira do Brasil"
-                    className="w-10 h-10 rounded-md object-cover shadow-lg"
+                    className="w-10 h-10 rounded-md object-cover shadow-md"
                   />
                   <div>
                     <p className="font-bold text-sm">Time Brasil</p>

@@ -26,7 +26,7 @@ export function AthleteCard({ athlete, index }: AthleteCardProps) {
       viewport={{ once: true }}
       data-testid={`card-athlete-${athlete.id}`}
     >
-      <Card className={`h-full overflow-visible border-2 transition-all duration-300 ${hasGold ? 'border-yellow-400/50 shadow-yellow-400/10' : 'border-transparent shadow-lg'}`}>
+      <Card className={`h-full overflow-visible transition-all duration-300 ${hasGold ? 'border-2 border-yellow-400/60 shadow-lg shadow-yellow-400/10' : 'border border-slate-200 dark:border-transparent shadow-md hover:shadow-lg dark:shadow-lg'}`}>
         <Link href={`/atleta/${athlete.id}`} data-testid={`link-athlete-profile-${athlete.id}`}>
           <div className="h-48 relative overflow-hidden rounded-t-md cursor-pointer group">
             {athlete.imageUrl && !imgError ? (
@@ -47,7 +47,7 @@ export function AthleteCard({ athlete, index }: AthleteCardProps) {
               </div>
             )}
             <div className="absolute bottom-4 left-4">
-              <Badge variant="secondary" className="bg-white/90 text-slate-800 dark:bg-slate-800/90 dark:text-slate-200">
+              <Badge variant="secondary" className="bg-white/90 text-slate-800 dark:bg-slate-800/90 dark:text-slate-200 shadow-sm">
                 {athlete.sport}
               </Badge>
             </div>
@@ -108,7 +108,7 @@ export function AthleteCard({ athlete, index }: AthleteCardProps) {
               )}
             </div>
             
-            <div className="pt-4 border-t border-border">
+            <div className="pt-4 border-t border-slate-100 dark:border-border">
               <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
                 <Calendar className="w-3 h-3" />
                 Provas e Resultados

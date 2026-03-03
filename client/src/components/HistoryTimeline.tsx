@@ -107,7 +107,7 @@ const iconMap = {
 export function HistoryTimeline() {
   return (
     <div className="relative container mx-auto px-4 max-w-4xl">
-      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500 via-yellow-400 to-blue-500 opacity-30 md:-translate-x-1/2" />
+      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500 via-yellow-400 to-blue-500 opacity-40 dark:opacity-30 md:-translate-x-1/2" />
 
       <div className="space-y-10">
         {history.map((entry, index) => {
@@ -125,7 +125,7 @@ export function HistoryTimeline() {
               className={`relative flex flex-wrap md:items-center ${isLeft ? "md:flex-row-reverse" : "md:flex-row"}`}
               data-testid={`history-entry-${entry.year}`}
             >
-              <div className="absolute left-4 md:left-1/2 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-background border-4 border-primary z-10 shadow-lg mt-1.5 md:mt-0">
+              <div className="absolute left-4 md:left-1/2 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-white dark:bg-background border-4 border-primary z-10 shadow-md mt-1.5 md:mt-0">
                 <Icon className={`w-3 h-3 ${isGold ? "text-yellow-500" : "text-primary"}`} />
               </div>
 
@@ -133,11 +133,11 @@ export function HistoryTimeline() {
 
               <div className={`ml-12 md:ml-0 md:w-1/2 ${isLeft ? "md:pl-12" : "md:pr-12"}`}>
                 <Card
-                  className={`p-5 shadow-sm ${
+                  className={`p-5 ${
                     isGold
-                      ? "border-yellow-400 bg-yellow-50/50 dark:bg-yellow-900/10"
-                      : ""
-                  }`}
+                      ? "border-yellow-400 bg-yellow-50/80 dark:bg-yellow-900/10 shadow-md shadow-yellow-100 dark:shadow-none"
+                      : "border-slate-200 dark:border-border shadow-sm hover:shadow-md dark:shadow-none"
+                  } transition-shadow`}
                 >
                   <div className="flex items-center justify-between gap-2 mb-1">
                     <span className="text-2xl font-black text-primary">{entry.year}</span>

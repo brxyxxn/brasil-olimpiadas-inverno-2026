@@ -125,10 +125,10 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
       <Hero />
 
-      <section id="intro" className="py-12 md:py-20 bg-white dark:bg-slate-900 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-5">
-          <div className="absolute top-20 right-20 w-80 h-80 bg-yellow-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-20 left-20 w-80 h-80 bg-green-500 rounded-full blur-3xl" />
+      <section id="intro" className="py-12 md:py-20 light-section-alt relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10 dark:opacity-5">
+          <div className="absolute top-20 right-20 w-80 h-80 bg-yellow-400 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-green-400 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -153,11 +153,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-center p-3 md:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50"
+                className="text-center p-3 md:p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-green-100 dark:border-slate-700/50 shadow-sm"
                 data-testid="stat-athletes"
               >
                 <p className="text-2xl md:text-4xl font-black text-green-600 dark:text-green-400">14</p>
-                <p className="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400 mt-1">Atletas</p>
+                <p className="text-xs md:text-sm font-semibold text-slate-700 dark:text-slate-400 mt-1">Atletas</p>
                 <p className="text-[10px] md:text-xs text-slate-500 dark:text-slate-500 mt-1 hidden sm:block">Maior delegacao da historia</p>
               </motion.div>
               <motion.div
@@ -165,11 +165,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-center p-3 md:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50"
+                className="text-center p-3 md:p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-yellow-100 dark:border-slate-700/50 shadow-sm"
                 data-testid="stat-sports"
               >
                 <p className="text-2xl md:text-4xl font-black text-yellow-500 dark:text-yellow-400">5</p>
-                <p className="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400 mt-1">Modalidades</p>
+                <p className="text-xs md:text-sm font-semibold text-slate-700 dark:text-slate-400 mt-1">Modalidades</p>
                 <p className="text-[10px] md:text-xs text-slate-500 dark:text-slate-500 mt-1 hidden sm:block">Esqui, Bobsled, Skeleton e mais</p>
               </motion.div>
               <motion.div
@@ -177,11 +177,11 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="text-center p-3 md:p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/50"
+                className="text-center p-3 md:p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-yellow-100 dark:border-slate-700/50 shadow-sm"
                 data-testid="stat-gold"
               >
                 <p className="text-2xl md:text-4xl font-black text-yellow-500 dark:text-yellow-400">1</p>
-                <p className="text-xs md:text-sm font-semibold text-slate-600 dark:text-slate-400 mt-1">Medalha de Ouro</p>
+                <p className="text-xs md:text-sm font-semibold text-slate-700 dark:text-slate-400 mt-1">Medalha de Ouro</p>
                 <p className="text-[10px] md:text-xs text-slate-500 dark:text-slate-500 mt-1 hidden sm:block">Primeira da historia no inverno</p>
               </motion.div>
             </div>
@@ -269,10 +269,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="schedule" className="py-12 md:py-24 scroll-mt-16 bg-white dark:bg-slate-900 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-5">
-          <div className="absolute top-10 left-10 w-96 h-96 bg-green-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-yellow-500 rounded-full blur-3xl" />
+      <section id="schedule" className="py-12 md:py-24 scroll-mt-16 light-section-alt relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10 dark:opacity-5">
+          <div className="absolute top-10 left-10 w-96 h-96 bg-green-400 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-yellow-400 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -287,10 +287,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="curiosidades" className="py-12 md:py-24 scroll-mt-16 bg-slate-50 dark:bg-slate-950 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-5">
-          <div className="absolute top-20 left-20 w-80 h-80 bg-yellow-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-500 rounded-full blur-3xl" />
+      <section id="curiosidades" className="py-12 md:py-24 scroll-mt-16 light-section-main relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10 dark:opacity-5">
+          <div className="absolute top-20 left-20 w-80 h-80 bg-yellow-400 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-blue-400 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -336,10 +336,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="history" className="py-12 md:py-24 scroll-mt-16 bg-white dark:bg-slate-900 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-5">
-          <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
-          <div className="absolute top-10 right-10 w-96 h-96 bg-green-500 rounded-full blur-3xl" />
+      <section id="history" className="py-12 md:py-24 scroll-mt-16 light-section-alt relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-10 dark:opacity-5">
+          <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl" />
+          <div className="absolute top-10 right-10 w-96 h-96 bg-green-400 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
@@ -378,20 +378,20 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-[#0A1A2F] text-white py-8 md:py-12 border-t border-white/10">
+      <footer className="bg-slate-100 dark:bg-[#0A1A2F] text-slate-800 dark:text-white py-8 md:py-12 border-t border-slate-200 dark:border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-md overflow-hidden shadow-lg">
+              <div className="w-10 h-10 rounded-md overflow-hidden shadow-md">
                 <BrazilFlag className="w-full h-full" />
               </div>
               <div>
                 <h3 className="font-bold text-lg leading-tight">Time Brasil</h3>
-                <p className="text-xs text-slate-400">Milano Cortina 2026</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">Milano Cortina 2026</p>
               </div>
             </div>
             
-            <p className="text-slate-400 text-sm text-center md:text-right">
+            <p className="text-slate-500 dark:text-slate-400 text-sm text-center md:text-right">
               Celebrando a excelencia brasileira nos esportes de inverno.<br />
               <span className="opacity-50">Pagina nao oficial. Dados baseados em resultados reais.</span>
             </p>

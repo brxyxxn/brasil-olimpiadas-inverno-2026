@@ -163,8 +163,8 @@ export function FunFacts() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <div className="relative bg-gradient-to-br from-yellow-50 via-white to-green-50 dark:from-slate-800 dark:via-slate-800/80 dark:to-slate-800 rounded-2xl border border-yellow-200/60 dark:border-yellow-700/30 p-6 md:p-10 overflow-hidden min-h-[260px] md:min-h-[240px]" data-testid="funfacts-card">
-        <div className="absolute top-4 right-4 opacity-10 dark:opacity-5">
+      <div className="relative bg-gradient-to-br from-yellow-50 via-white to-green-50 dark:from-slate-800 dark:via-slate-800/80 dark:to-slate-800 rounded-2xl border border-yellow-200/80 dark:border-yellow-700/30 p-6 md:p-10 overflow-hidden min-h-[260px] md:min-h-[240px] shadow-sm" data-testid="funfacts-card">
+        <div className="absolute top-4 right-4 opacity-[0.07] dark:opacity-5">
           <Snowflake className="w-24 h-24 text-blue-400" />
         </div>
 
@@ -187,12 +187,12 @@ export function FunFacts() {
                 <h3 className="font-bold text-lg md:text-xl text-slate-900 dark:text-white" data-testid="funfact-athlete">
                   {current.athlete}
                 </h3>
-                <span className="text-xs font-semibold text-green-600 dark:text-green-400 uppercase tracking-wide">
+                <span className="text-xs font-semibold text-green-700 dark:text-green-400 uppercase tracking-wide">
                   {current.sport}
                 </span>
               </div>
             </div>
-            <p className="text-slate-600 dark:text-slate-300 text-sm md:text-base leading-relaxed" data-testid="funfact-text">
+            <p className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed" data-testid="funfact-text">
               {current.fact}
             </p>
           </motion.div>
@@ -221,7 +221,7 @@ export function FunFacts() {
               }}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 i === currentIndex
-                  ? "bg-green-500 dark:bg-green-400 w-5"
+                  ? "bg-green-600 dark:bg-green-400 w-5"
                   : "bg-slate-300 dark:bg-slate-600"
               }`}
               aria-label={`Curiosidade ${i + 1}`}

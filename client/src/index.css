@@ -9,25 +9,23 @@ html {
 }
 
 :root {
-  /* Brazilian Core with Winter Twist */
   --brazil-green: 146 64% 36%;
   --brazil-yellow: 48 100% 50%;
   --brazil-blue: 228 63% 36%;
   
-  /* Theme Colors */
-  --background: 210 40% 98%;
+  --background: 210 33% 99%;
   --foreground: 222 47% 11%;
   
-  --primary: 146 64% 36%; /* Brazil Green */
+  --primary: 146 64% 36%;
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 48 100% 50%; /* Brazil Yellow */
+  --secondary: 48 100% 50%;
   --secondary-foreground: 222 47% 11%;
   
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
+  --muted: 210 30% 95%;
+  --muted-foreground: 215 16% 43%;
   
-  --accent: 228 63% 36%; /* Brazil Blue */
+  --accent: 228 63% 36%;
   --accent-foreground: 0 0% 100%;
   
   --destructive: 0 84.2% 60.2%;
@@ -39,8 +37,8 @@ html {
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
 
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
+  --border: 214 20% 89%;
+  --input: 214 20% 89%;
   --ring: 146 64% 36%;
   
   --radius: 0.75rem;
@@ -88,7 +86,6 @@ html {
   }
 }
 
-/* Custom Gradients */
 .bg-gradient-brazil {
   background: linear-gradient(135deg, hsl(var(--brazil-blue)) 0%, hsl(var(--brazil-green)) 100%);
 }
@@ -100,12 +97,18 @@ html {
   background-clip: text;
 }
 
-/* Glass Effect */
 .glass-card {
-  @apply bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg;
+  @apply bg-white/90 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-lg;
 }
 
-/* Animations */
+.light-section-alt {
+  @apply bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-900;
+}
+
+.light-section-main {
+  @apply bg-gradient-to-b from-slate-50/80 to-white dark:from-slate-950 dark:to-slate-950;
+}
+
 @keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
