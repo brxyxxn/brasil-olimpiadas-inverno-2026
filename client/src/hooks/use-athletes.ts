@@ -1,38 +1,27 @@
-import { useQuery } from "@tanstack/react-query";
-import { api, buildUrl } from "@shared/routes";
-import type { AthleteWithEvents } from "@shared/schema";
+import { athletes, type AthleteWithEvents } from "../data/athletes";
 
 export function useAthletes() {
-  return useQuery<AthleteWithEvents[]>({
-    queryKey: [api.athletes.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.athletes.list.path);
-      if (!res.ok) throw new Error("Failed to fetch athletes");
-      return await res.json();
-    },
-  });
+  return {
+    data: athletes as AthleteWithEvents[],
+    isLoading: false,
+    error: null,
+  };
 }
 
 export function useAthlete(id: number) {
-  return useQuery<AthleteWithEvents>({
-    queryKey: ["/api/athletes", id],
-    queryFn: async () => {
-      const url = buildUrl(api.athletes.get.path, { id });
-      const res = await fetch(url);
-      if (!res.ok) throw new Error("Athlete not found");
-      return await res.json();
-    },
-    enabled: !!id,
-  });
+  const athlete = athletes.find((a) => a.id === id);
+  return {
+    data: athlete as AthleteWithEvents | undefined,
+    isLoading: false,
+    error: athlete ? null : new Error("Athlete not found"),
+  };
 }
 
 export function useEvents() {
-  return useQuery({
-    queryKey: [api.events.list.path],
-    queryFn: async () => {
-      const res = await fetch(api.events.list.path);
-      if (!res.ok) throw new Error("Failed to fetch events");
-      return await res.json();
-    },
-  });
+  const allEvents = athletes.flatMap((a) => a.events);
+  return {
+    data: allEvents,
+    isLoading: false,
+    error: null,
+  };
 }
